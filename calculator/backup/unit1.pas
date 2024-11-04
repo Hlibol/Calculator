@@ -5,7 +5,7 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus;
 
 type
 
@@ -15,6 +15,7 @@ type
     btn_MC: TButton;
     btn_del: TButton;
     btn_1x: TButton;
+    btn_Mswap: TButton;
     btn_x2: TButton;
     btn_sqr: TButton;
     btn_division: TButton;
@@ -42,6 +43,8 @@ type
     btn_CE: TButton;
     btn_C: TButton;
     Edit1: TEdit;
+    Edit2: TEdit;
+    Label1: TLabel;
     procedure btn_0Click(Sender: TObject);
     procedure btn_1Click(Sender: TObject);
     procedure btn_1xClick(Sender: TObject);
@@ -60,7 +63,12 @@ type
     procedure btn_delClick(Sender: TObject);
     procedure btn_divisionClick(Sender: TObject);
     procedure btn_equalClick(Sender: TObject);
+    procedure btn_MCClick(Sender: TObject);
     procedure btn_minusClick(Sender: TObject);
+    procedure btn_MminusClick(Sender: TObject);
+    procedure btn_MplusClick(Sender: TObject);
+    procedure btn_MRClick(Sender: TObject);
+    procedure btn_MSClick(Sender: TObject);
     procedure btn_multiClick(Sender: TObject);
     procedure btn_plusClick(Sender: TObject);
     procedure btn_sinClick(Sender: TObject);
@@ -78,13 +86,14 @@ var
   check:boolean;
   firstnum,num,result,tempnum:double;
   operation,sign,temp:string;
-
+  memory:array[1..10] of double;
+  memorynum:longint =1 ;
 
 implementation
 
 {$R *.lfm}
-
 { TForm1 }
+
 function strtonum(var edit1:Tedit):double;
 var number:double;
 begin
@@ -292,11 +301,41 @@ begin
   end;
 end;
 
+procedure TForm1.btn_MCClick(Sender: TObject);
+begin
+  memory[memorynum]:=0;
+  edit2.text:=numtostr(memory[memorynum]);
+end;
+
 procedure TForm1.btn_minusClick(Sender: TObject);
 begin
   firstnum:=strtonum(edit1);
   operation:='-';
   check:=true;
+end;
+
+procedure TForm1.btn_MminusClick(Sender: TObject);
+begin
+   memory[memorynum]:=memory[memorynum]-strtonum(edit1);
+   edit2.text:=numtostr(memory[memorynum]);
+end;
+
+procedure TForm1.btn_MplusClick(Sender: TObject);
+begin
+  memory[memorynum]:=memory[memorynum]+strtonum(edit1);
+  edit2.text:=numtostr(memory[memorynum]);
+end;
+
+procedure TForm1.btn_MRClick(Sender: TObject);
+begin
+    edit1.Text:=numtostr(memory[memorynum]);
+    edit2.text:=numtostr(memory[memorynum]);
+end;
+
+procedure TForm1.btn_MSClick(Sender: TObject);
+begin
+  memory[memorynum]:=strtonum(edit1);
+  edit2.text:=numtostr(memory[memorynum]);
 end;
 
 procedure TForm1.btn_multiClick(Sender: TObject);
@@ -342,6 +381,11 @@ procedure TForm1.Edit1Change(Sender: TObject);
 begin
 
 end;
-
+procedure TForm1.btn_Mswap(Sender: TObject);
+begin
+  if memorynum<=10 then inc(memorynum)
+  else memorynum:=1;
+  edit2.text:=numtostr(memory[memorynum]);
+end;
 end.
 

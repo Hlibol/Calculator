@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 1634
-  Height = 624
-  Top = 417
-  Width = 739
+  Left = 1724
+  Height = 573
+  Top = 328
+  Width = 568
   Caption = 'Form1'
-  ClientHeight = 624
-  ClientWidth = 739
+  ClientHeight = 573
+  ClientWidth = 568
   Font.CharSet = RUSSIAN_CHARSET
   Font.Height = -21
   Font.Name = 'Segoe UI Semibold'
@@ -290,13 +290,29 @@ object Form1: TForm1
     TabOrder = 29
     OnClick = btn_equalClick
   end
-  object btn_Mswap: TButton
+  object Label1: TLabel
+    Left = 8
+    Height = 30
+    Top = 528
+    Width = 82
+    Caption = 'memory'
+  end
+  object Edit2: TEdit
+    Left = 96
+    Height = 38
+    Top = 528
+    Width = 102
+    Enabled = False
+    TabOrder = 30
+    Text = '0'
+  end
+  object btn_Msw: TButton
     Left = 340
     Height = 30
     Top = 64
     Width = 68
     Caption = 'M'
-    TabOrder = 30
-    OnClick = btn_MSClick
+    TabOrder = 31
+    OnClick = btn_MswClick
   end
 end

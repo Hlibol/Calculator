@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 1651
-  Height = 624
-  Top = 417
-  Width = 521
+  Left = 1724
+  Height = 573
+  Top = 328
+  Width = 568
   Caption = 'Form1'
-  ClientHeight = 624
-  ClientWidth = 521
+  ClientHeight = 573
+  ClientWidth = 568
   Font.CharSet = RUSSIAN_CHARSET
   Font.Height = -21
   Font.Name = 'Segoe UI Semibold'
@@ -27,41 +27,46 @@ object Form1: TForm1
     Left = 0
     Height = 30
     Top = 64
-    Width = 102
+    Width = 68
     Caption = 'MC'
     TabOrder = 1
+    OnClick = btn_MCClick
   end
   object btn_MR: TButton
-    Left = 102
+    Left = 68
     Height = 30
     Top = 64
-    Width = 102
+    Width = 68
     Caption = 'MR'
     TabOrder = 2
+    OnClick = btn_MRClick
   end
   object btn_Mplus: TButton
+    Left = 136
+    Height = 30
+    Top = 64
+    Width = 68
+    Caption = 'M+'
+    TabOrder = 3
+    OnClick = btn_MplusClick
+  end
+  object btn_Mminus: TButton
     Left = 204
     Height = 30
     Top = 64
-    Width = 102
-    Caption = 'M+'
-    TabOrder = 3
-  end
-  object btn_Mminus: TButton
-    Left = 306
-    Height = 30
-    Top = 64
-    Width = 102
+    Width = 68
     Caption = 'M-'
     TabOrder = 4
+    OnClick = btn_MminusClick
   end
   object btn_MS: TButton
-    Left = 408
+    Left = 272
     Height = 30
     Top = 64
-    Width = 102
+    Width = 68
     Caption = 'MS'
     TabOrder = 5
+    OnClick = btn_MSClick
   end
   object btn_sin: TButton
     Left = 0
@@ -284,5 +289,30 @@ object Form1: TForm1
     Caption = '='
     TabOrder = 29
     OnClick = btn_equalClick
+  end
+  object btn_Mswap: TButton
+    Left = 340
+    Height = 30
+    Top = 64
+    Width = 68
+    Caption = 'M'
+    TabOrder = 30
+    OnClick = btn_MSClick
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 30
+    Top = 528
+    Width = 82
+    Caption = 'memory'
+  end
+  object Edit2: TEdit
+    Left = 96
+    Height = 38
+    Top = 528
+    Width = 102
+    Enabled = False
+    TabOrder = 31
+    Text = '0'
   end
 end
