@@ -1,0 +1,288 @@
+object Form1: TForm1
+  Left = 1651
+  Height = 624
+  Top = 417
+  Width = 521
+  Caption = 'Form1'
+  ClientHeight = 624
+  ClientWidth = 521
+  Font.CharSet = RUSSIAN_CHARSET
+  Font.Height = -21
+  Font.Name = 'Segoe UI Semibold'
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  Font.Style = [fsBold]
+  LCLVersion = '3.6.0.0'
+  object Edit1: TEdit
+    Left = 0
+    Height = 38
+    Top = 24
+    Width = 408
+    NumbersOnly = True
+    TabOrder = 0
+    Text = '0'
+    OnChange = Edit1Change
+  end
+  object btn_MC: TButton
+    Left = 0
+    Height = 30
+    Top = 64
+    Width = 102
+    Caption = 'MC'
+    TabOrder = 1
+  end
+  object btn_MR: TButton
+    Left = 102
+    Height = 30
+    Top = 64
+    Width = 102
+    Caption = 'MR'
+    TabOrder = 2
+  end
+  object btn_Mplus: TButton
+    Left = 204
+    Height = 30
+    Top = 64
+    Width = 102
+    Caption = 'M+'
+    TabOrder = 3
+  end
+  object btn_Mminus: TButton
+    Left = 306
+    Height = 30
+    Top = 64
+    Width = 102
+    Caption = 'M-'
+    TabOrder = 4
+  end
+  object btn_MS: TButton
+    Left = 408
+    Height = 30
+    Top = 64
+    Width = 102
+    Caption = 'MS'
+    TabOrder = 5
+  end
+  object btn_sin: TButton
+    Left = 0
+    Height = 70
+    Top = 102
+    Width = 102
+    Caption = 'sin(x)'
+    TabOrder = 6
+    OnClick = btn_sinClick
+  end
+  object btn_CE: TButton
+    Left = 102
+    Height = 70
+    Top = 102
+    Width = 102
+    Caption = 'CE'
+    TabOrder = 7
+    OnClick = btn_CEClick
+  end
+  object btn_C: TButton
+    Left = 204
+    Height = 70
+    Top = 102
+    Width = 102
+    Caption = 'C'
+    TabOrder = 8
+    OnClick = btn_CClick
+  end
+  object btn_del: TButton
+    Left = 306
+    Height = 70
+    Top = 102
+    Width = 102
+    Caption = '⌫'
+    TabOrder = 9
+    OnClick = btn_delClick
+  end
+  object btn_1x: TButton
+    Left = 0
+    Height = 70
+    Top = 172
+    Width = 102
+    Caption = '1/x'
+    TabOrder = 10
+    OnClick = btn_1xClick
+  end
+  object btn_x2: TButton
+    Left = 102
+    Height = 70
+    Top = 172
+    Width = 102
+    Caption = 'x^2'
+    TabOrder = 11
+    OnClick = btn_x2Click
+  end
+  object btn_sqr: TButton
+    Left = 204
+    Height = 70
+    Top = 172
+    Width = 102
+    Caption = 'sqrt(x)'
+    TabOrder = 12
+    OnClick = btn_sqrClick
+  end
+  object btn_division: TButton
+    Left = 306
+    Height = 70
+    Top = 172
+    Width = 102
+    Caption = '÷'
+    Font.CharSet = RUSSIAN_CHARSET
+    Font.Height = -24
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 13
+    OnClick = btn_divisionClick
+  end
+  object btn_7: TButton
+    Left = 0
+    Height = 70
+    Top = 242
+    Width = 102
+    Caption = '7'
+    TabOrder = 14
+    OnClick = btn_7Click
+  end
+  object btn_8: TButton
+    Left = 102
+    Height = 70
+    Top = 242
+    Width = 102
+    Caption = '8'
+    TabOrder = 15
+    OnClick = btn_8Click
+  end
+  object btn_9: TButton
+    Left = 204
+    Height = 70
+    Top = 242
+    Width = 102
+    Caption = '9'
+    TabOrder = 16
+    OnClick = btn_9Click
+  end
+  object btn_multi: TButton
+    Left = 306
+    Height = 70
+    Top = 242
+    Width = 102
+    Caption = '×'
+    TabOrder = 17
+    OnClick = btn_multiClick
+  end
+  object btn_4: TButton
+    Left = 0
+    Height = 70
+    Top = 312
+    Width = 102
+    Caption = '4'
+    TabOrder = 18
+    OnClick = btn_4Click
+  end
+  object btn_5: TButton
+    Left = 102
+    Height = 70
+    Top = 312
+    Width = 102
+    Caption = '5'
+    TabOrder = 19
+    OnClick = btn_5Click
+  end
+  object btn_6: TButton
+    Left = 204
+    Height = 70
+    Top = 312
+    Width = 102
+    Caption = '6'
+    TabOrder = 20
+    OnClick = btn_6Click
+  end
+  object btn_minus: TButton
+    Left = 306
+    Height = 70
+    Top = 312
+    Width = 102
+    Caption = '-'
+    TabOrder = 21
+    OnClick = btn_minusClick
+  end
+  object btn_1: TButton
+    Left = 0
+    Height = 70
+    Top = 382
+    Width = 102
+    Caption = '1'
+    TabOrder = 22
+    OnClick = btn_1Click
+  end
+  object btn_2: TButton
+    Left = 102
+    Height = 70
+    Top = 382
+    Width = 102
+    Caption = '2'
+    TabOrder = 23
+    OnClick = btn_2Click
+  end
+  object btn_3: TButton
+    Left = 204
+    Height = 70
+    Top = 382
+    Width = 102
+    Caption = '3'
+    TabOrder = 24
+    OnClick = btn_3Click
+  end
+  object btn_plus: TButton
+    Left = 306
+    Height = 70
+    Top = 382
+    Width = 102
+    Caption = '+'
+    TabOrder = 25
+    OnClick = btn_plusClick
+  end
+  object btn_change: TButton
+    Left = 0
+    Height = 70
+    Top = 452
+    Width = 102
+    Caption = '+/-'
+    TabOrder = 26
+    OnClick = btn_changeClick
+  end
+  object btn_0: TButton
+    Left = 102
+    Height = 70
+    Top = 452
+    Width = 102
+    Caption = '0'
+    TabOrder = 27
+    OnClick = btn_0Click
+  end
+  object btn_comma: TButton
+    Left = 204
+    Height = 70
+    Top = 452
+    Width = 102
+    Caption = ','
+    TabOrder = 28
+    OnClick = btn_commaClick
+  end
+  object btn_equal: TButton
+    Left = 307
+    Height = 70
+    Top = 452
+    Width = 102
+    Caption = '='
+    TabOrder = 29
+    OnClick = btn_equalClick
+  end
+end
