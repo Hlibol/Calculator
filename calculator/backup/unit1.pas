@@ -86,7 +86,7 @@ type
 
 var
   Form1: TForm1;
-  check:boolean;
+  check,check2:boolean;
   firstnum,num,result,tempnum:double;
   operation,sign,temp:string;
   memory:array[1..10] of double;
@@ -237,6 +237,7 @@ end;
 procedure TForm1.btn_CClick(Sender: TObject);
 begin
   edit1.Text:='0';
+  check2:=false;
   check:=false;
   firstnum:=0;
   num:=0;
@@ -281,7 +282,7 @@ procedure TForm1.btn_equalClick(Sender: TObject);
 begin
   if operation<>'' then
   begin
-    if check then
+    if check2 then
     else
     begin
       num:=strtonum(edit1);
@@ -293,12 +294,15 @@ begin
       '/': if num<>0 then
              result:=firstnum/num
            else
+           begin
               edit1.Text:='Error';
+              check:=true;
+           end;
     end;
     if edit1.Text<>'Error' then
     begin
       edit1.Text:=numtostr(result);
-      check:=true;
+      check2:=true;
       firstnum:=result;
     end;
   end;
@@ -339,12 +343,26 @@ procedure TForm1.btn_MSClick(Sender: TObject);
 begin
   memory[memorynum]:=strtonum(edit1);
   edit2.text:=numtostr(memory[memorynum]);
+  btn_Mminus.Enabled:=true;
+  btn_Mplus.Enabled:=true;
+  btn_Mplus.Enabled:=true;
+  btn_MR.Enabled:=true;
+  btn_MC.Enabled:=true;
 end;
 
 procedure TForm1.btn_MswClick(Sender: TObject);
 begin
-  if memorynum<10 then inc(memorynum)
+  if memorynum<10 then
+       inc(memorynum)
   else memorynum:=1;
+  if memory[memorynum]=0 then
+  begin
+    btn_Mminus.Enabled:=false;
+    btn_Mplus.Enabled:=false;
+    btn_Mplus.Enabled:=false;
+    btn_MR.Enabled:=false;
+    btn_MC.Enabled:=false;
+  end;
   edit2.text:=numtostr(memory[memorynum]);
   case memorynum of
     1:label2.Caption:='1';

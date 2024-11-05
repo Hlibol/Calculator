@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 1724
+  Left = 1738
   Height = 573
-  Top = 366
+  Top = 445
   Width = 568
   Caption = 'Form1'
   ClientHeight = 573
@@ -29,6 +29,7 @@ object Form1: TForm1
     Top = 64
     Width = 68
     Caption = 'MC'
+    Enabled = False
     TabOrder = 1
     OnClick = btn_MCClick
   end
@@ -38,6 +39,7 @@ object Form1: TForm1
     Top = 64
     Width = 68
     Caption = 'MR'
+    Enabled = False
     TabOrder = 2
     OnClick = btn_MRClick
   end
@@ -47,6 +49,7 @@ object Form1: TForm1
     Top = 64
     Width = 68
     Caption = 'M+'
+    Enabled = False
     TabOrder = 3
     OnClick = btn_MplusClick
   end
@@ -56,6 +59,7 @@ object Form1: TForm1
     Top = 64
     Width = 68
     Caption = 'M-'
+    Enabled = False
     TabOrder = 4
     OnClick = btn_MminusClick
   end

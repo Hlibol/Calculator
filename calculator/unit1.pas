@@ -343,12 +343,34 @@ procedure TForm1.btn_MSClick(Sender: TObject);
 begin
   memory[memorynum]:=strtonum(edit1);
   edit2.text:=numtostr(memory[memorynum]);
+  btn_Mminus.Enabled:=true;
+  btn_Mplus.Enabled:=true;
+  btn_Mplus.Enabled:=true;
+  btn_MR.Enabled:=true;
+  btn_MC.Enabled:=true;
 end;
 
 procedure TForm1.btn_MswClick(Sender: TObject);
 begin
-  if memorynum<10 then inc(memorynum)
+  if memorynum<10 then
+       inc(memorynum)
   else memorynum:=1;
+  if memory[memorynum]=0 then
+  begin
+    btn_Mminus.Enabled:=false;
+    btn_Mplus.Enabled:=false;
+    btn_Mplus.Enabled:=false;
+    btn_MR.Enabled:=false;
+    btn_MC.Enabled:=false;
+  end
+  else
+  begin
+    btn_Mminus.Enabled:=true;
+    btn_Mplus.Enabled:=true;
+    btn_Mplus.Enabled:=true;
+    btn_MR.Enabled:=true;
+    btn_MC.Enabled:=true;
+  end;
   edit2.text:=numtostr(memory[memorynum]);
   case memorynum of
     1:label2.Caption:='1';
