@@ -15,7 +15,6 @@ type
     btn_MC: TButton;
     btn_del: TButton;
     btn_1x: TButton;
-    btn_Mswap: TButton;
     btn_x2: TButton;
     btn_sqr: TButton;
     btn_division: TButton;
@@ -42,9 +41,11 @@ type
     btn_sin: TButton;
     btn_CE: TButton;
     btn_C: TButton;
+    btn_Msw: TButton;
     Edit1: TEdit;
     Edit2: TEdit;
     Label1: TLabel;
+    Label2: TLabel;
     procedure btn_0Click(Sender: TObject);
     procedure btn_1Click(Sender: TObject);
     procedure btn_1xClick(Sender: TObject);
@@ -69,12 +70,14 @@ type
     procedure btn_MplusClick(Sender: TObject);
     procedure btn_MRClick(Sender: TObject);
     procedure btn_MSClick(Sender: TObject);
+    procedure btn_MswClick(Sender: TObject);
     procedure btn_multiClick(Sender: TObject);
     procedure btn_plusClick(Sender: TObject);
     procedure btn_sinClick(Sender: TObject);
     procedure btn_sqrClick(Sender: TObject);
     procedure btn_x2Click(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
+    procedure Label1Click(Sender: TObject);
   private
 
   public
@@ -338,6 +341,25 @@ begin
   edit2.text:=numtostr(memory[memorynum]);
 end;
 
+procedure TForm1.btn_MswClick(Sender: TObject);
+begin
+  if memorynum<=10 then inc(memorynum)
+  else memorynum:=1;
+  edit2.text:=numtostr(memory[memorynum]);
+  case memorynum of
+    1:label2.Caption:='1';
+    2:label2.Caption:='2';
+    3:label2.Caption:='3';
+    4:label2.Caption:='4';
+    5:label2.Caption:='5';
+    6:label2.Caption:='6';
+    7:label2.Caption:='7';
+    8:label2.Caption:='8';
+    9:label2.Caption:='9';
+    10:label2.Caption:='10';
+  end;
+end;
+
 procedure TForm1.btn_multiClick(Sender: TObject);
 begin
   firstnum:=strtonum(edit1);
@@ -381,11 +403,11 @@ procedure TForm1.Edit1Change(Sender: TObject);
 begin
 
 end;
-procedure TForm1.btn_Mswap(Sender: TObject);
+
+procedure TForm1.Label1Click(Sender: TObject);
 begin
-  if memorynum<=10 then inc(memorynum)
-  else memorynum:=1;
-  edit2.text:=numtostr(memory[memorynum]);
+
 end;
+
 end.
 

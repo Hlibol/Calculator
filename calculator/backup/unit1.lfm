@@ -290,21 +290,13 @@ object Form1: TForm1
     TabOrder = 29
     OnClick = btn_equalClick
   end
-  object btn_Mswap: TButton
-    Left = 340
-    Height = 30
-    Top = 64
-    Width = 68
-    Caption = 'M'
-    TabOrder = 30
-    OnClick = btn_MSClick
-  end
   object Label1: TLabel
     Left = 8
     Height = 30
     Top = 528
     Width = 82
     Caption = 'memory'
+    OnClick = Label1Click
   end
   object Edit2: TEdit
     Left = 96
@@ -312,7 +304,23 @@ object Form1: TForm1
     Top = 528
     Width = 102
     Enabled = False
-    TabOrder = 31
+    TabOrder = 30
     Text = '0'
+  end
+  object btn_Msw: TButton
+    Left = 340
+    Height = 30
+    Top = 64
+    Width = 68
+    Caption = 'M'
+    TabOrder = 31
+    OnClick = btn_MswClick
+  end
+  object Label2: TLabel
+    Left = 244
+    Height = 30
+    Top = 528
+    Width = 8
+    Caption = '1'
   end
 end

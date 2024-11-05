@@ -1,7 +1,7 @@
 object Form1: TForm1
   Left = 1724
   Height = 573
-  Top = 328
+  Top = 366
   Width = 568
   Caption = 'Form1'
   ClientHeight = 573
@@ -296,6 +296,7 @@ object Form1: TForm1
     Top = 528
     Width = 82
     Caption = 'memory'
+    OnClick = Label1Click
   end
   object Edit2: TEdit
     Left = 96
@@ -314,5 +315,12 @@ object Form1: TForm1
     Caption = 'M'
     TabOrder = 31
     OnClick = btn_MswClick
+  end
+  object Label2: TLabel
+    Left = 244
+    Height = 30
+    Top = 528
+    Width = 8
+    Caption = '1'
   end
 end
