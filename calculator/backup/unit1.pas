@@ -141,7 +141,11 @@ begin
     tempnum:=1/tempnum;
     edit1.Text:=numtostr(tempnum);
   end
-  else  edit1.Text:='Error';
+  else
+  begin
+    edit1.Text:='Error';
+    check:=true;
+  end;
 end;
 
 procedure TForm1.btn_0Click(Sender: TObject);
@@ -415,7 +419,11 @@ begin
     tempnum:=sqrt(tempnum);
     edit1.Text:=numtostr(tempnum);
   end
-  else  edit1.Text:='Error';
+  else
+  begin
+    edit1.Text:='Error';
+    check:=true;
+  end;
 end;
 
 procedure TForm1.btn_x2Click(Sender: TObject);
