@@ -1,11 +1,11 @@
 object Form1: TForm1
   Left = 1738
-  Height = 573
-  Top = 445
-  Width = 568
+  Height = 569
+  Top = 449
+  Width = 410
   Caption = 'Form1'
-  ClientHeight = 573
-  ClientWidth = 568
+  ClientHeight = 569
+  ClientWidth = 410
   Font.CharSet = RUSSIAN_CHARSET
   Font.Height = -21
   Font.Name = 'Segoe UI Semibold'

@@ -362,6 +362,14 @@ begin
     btn_Mplus.Enabled:=false;
     btn_MR.Enabled:=false;
     btn_MC.Enabled:=false;
+  end
+  else
+  begin
+    btn_Mminus.Enabled:=true;
+    btn_Mplus.Enabled:=true;
+    btn_Mplus.Enabled:=true;
+    btn_MR.Enabled:=true;
+    btn_MC.Enabled:=true;
   end;
   edit2.text:=numtostr(memory[memorynum]);
   case memorynum of
