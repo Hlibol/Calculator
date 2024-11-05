@@ -321,7 +321,7 @@ object Form1: TForm1
     OnClick = btn_MswClick
   end
   object Label2: TLabel
-    Left = 244
+    Left = 208
     Height = 30
     Top = 528
     Width = 8
