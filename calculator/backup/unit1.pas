@@ -343,7 +343,7 @@ end;
 
 procedure TForm1.btn_MswClick(Sender: TObject);
 begin
-  if memorynum<=10 then inc(memorynum)
+  if memorynum<10 then inc(memorynum)
   else memorynum:=1;
   edit2.text:=numtostr(memory[memorynum]);
   case memorynum of

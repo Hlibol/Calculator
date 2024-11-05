@@ -86,7 +86,7 @@ type
 
 var
   Form1: TForm1;
-  check:boolean;
+  check,check2:boolean;
   firstnum,num,result,tempnum:double;
   operation,sign,temp:string;
   memory:array[1..10] of double;
@@ -237,6 +237,7 @@ end;
 procedure TForm1.btn_CClick(Sender: TObject);
 begin
   edit1.Text:='0';
+  check2:=false;
   check:=false;
   firstnum:=0;
   num:=0;
@@ -281,7 +282,7 @@ procedure TForm1.btn_equalClick(Sender: TObject);
 begin
   if operation<>'' then
   begin
-    if check then
+    if check2 then
     else
     begin
       num:=strtonum(edit1);
@@ -293,12 +294,15 @@ begin
       '/': if num<>0 then
              result:=firstnum/num
            else
+           begin
               edit1.Text:='Error';
+              check:=true;
+           end;
     end;
     if edit1.Text<>'Error' then
     begin
       edit1.Text:=numtostr(result);
-      check:=true;
+      check2:=true;
       firstnum:=result;
     end;
   end;
