@@ -42,6 +42,8 @@ type
     btn_CE: TButton;
     btn_C: TButton;
     btn_Msw: TButton;
+    Btn_DEC: TButton;
+    Btn_BIN: TButton;
     Edit1: TEdit;
     Edit2: TEdit;
     Label1: TLabel;
@@ -57,10 +59,12 @@ type
     procedure btn_7Click(Sender: TObject);
     procedure btn_8Click(Sender: TObject);
     procedure btn_9Click(Sender: TObject);
+    procedure Btn_BINClick(Sender: TObject);
     procedure btn_CClick(Sender: TObject);
     procedure btn_CEClick(Sender: TObject);
     procedure btn_changeClick(Sender: TObject);
     procedure btn_commaClick(Sender: TObject);
+    procedure Btn_DECClick(Sender: TObject);
     procedure btn_delClick(Sender: TObject);
     procedure btn_divisionClick(Sender: TObject);
     procedure btn_equalClick(Sender: TObject);
@@ -91,11 +95,44 @@ var
   operation,sign,temp:string;
   memory:array[1..10] of double;
   memorynum:longint =1 ;
+  numtype:string = 'DEC';
 
 implementation
 
 {$R *.lfm}
 { TForm1 }
+
+
+function numtostrbin(var number:double):string;
+var
+  num:longint;
+begin
+  num:=trunc(number);
+  temp:='';
+  while num>0 do
+  begin
+    temp:=chr((num mod 2)+ord('0'))+temp;
+    num:=num div 2;
+  end;
+  if temp='' then temp:='0';
+  numtostrbin:=temp;
+end;
+
+
+function strtonumbin(var edit1:Tedit):double;
+var number,incbin:double;
+  i:longint;
+begin
+    temp:=edit1.Text;
+    number:=0;
+    incbin:=1;
+    for i:=length(temp) downto 1 do
+    begin
+      if temp[i]='1' then number:=number+incbin;
+      incbin:=incbin*2;
+    end;
+    strtonumbin:=number;
+end;
 
 function strtonum(var edit1:Tedit):double;
 var number:double;
@@ -125,10 +162,11 @@ begin
 end;
 procedure TForm1.btn_1Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='1';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'1';
 end;
@@ -150,92 +188,134 @@ end;
 
 procedure TForm1.btn_0Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='0';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'0';
 end;
 
 procedure TForm1.btn_2Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
     begin
        edit1.Text:='2';
        check:=false;
+       check2:=false;
     end
     else edit1.Text:=edit1.Text+'2';
 end;
 
 procedure TForm1.btn_3Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='3';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'3'; ;
 end;
 
 procedure TForm1.btn_4Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='4';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'4';
 end;
 
 procedure TForm1.btn_5Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='5';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'5';
 end;
 
 procedure TForm1.btn_6Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='6';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'6';
 end;
 
 procedure TForm1.btn_7Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='7';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'7';
 end;
 
 procedure TForm1.btn_8Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='8';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'8';
 end;
 
 procedure TForm1.btn_9Click(Sender: TObject);
 begin
-  if (edit1.Text='0') or (check) then
+  if (edit1.Text='0') or (check) or (check2) then
   begin
      edit1.Text:='9';
      check:=false;
+     check2:=false;
   end
   else edit1.Text:=edit1.Text+'9';
+end;
+
+procedure TForm1.Btn_BINClick(Sender: TObject);
+begin
+  btn_DEC.enabled:=true;
+  btn_BIN.enabled:=false;
+  btn_2.enabled:=false;
+  btn_3.enabled:=false;
+  btn_4.enabled:=false;
+  btn_5.enabled:=false;
+  btn_6.enabled:=false;
+  btn_7.enabled:=false;
+  btn_8.enabled:=false;
+  btn_9.enabled:=false;
+  btn_change.enabled:=false;
+  btn_comma.enabled:=false;
+  btn_comma.enabled:=false;
+  btn_sin.enabled:=false;
+  btn_MC.enabled:=false;
+  btn_MR.enabled:=false;
+  btn_MS.enabled:=false;
+  btn_Mplus.enabled:=false;
+  btn_Mminus.enabled:=false;
+  btn_Msw.enabled:=false;
+  btn_1x.enabled:=false;
+  btn_sqr.enabled:=false;
+  if numtype='DEC' then
+  begin
+     numtype:='BIN';
+     tempnum:=strtonum(edit1);
+     edit1.Text:=numtostrbin(tempnum);
+
+  end;
 end;
 
 procedure TForm1.btn_CClick(Sender: TObject);
@@ -269,6 +349,39 @@ begin
   if pos(',',edit1.Text)=0 then  edit1.Text:=edit1.Text+',';
 end;
 
+procedure TForm1.Btn_DECClick(Sender: TObject);
+begin
+    btn_DEC.enabled:=false;
+    btn_BIN.enabled:=true;
+    btn_2.enabled:=true;
+    btn_3.enabled:=true;
+    btn_4.enabled:=true;
+    btn_5.enabled:=true;
+    btn_6.enabled:=true;
+    btn_7.enabled:=true;
+    btn_8.enabled:=true;
+    btn_9.enabled:=true;
+    btn_change.enabled:=true;
+    btn_comma.enabled:=true;
+    btn_comma.enabled:=true;
+    btn_sin.enabled:=true;
+    btn_MC.enabled:=true;
+    btn_MR.enabled:=true;
+    btn_MS.enabled:=true;
+    btn_Mplus.enabled:=true;
+    btn_Mminus.enabled:=true;
+    btn_Msw.enabled:=true;
+    btn_1x.enabled:=true;
+    btn_sqr.enabled:=true;
+    if numtype='BIN' then
+    begin
+     numtype:='DEC';
+     tempnum:=strtonumbin(edit1);
+     edit1.Text:=numtostr(tempnum);
+    end;
+
+end;
+
 procedure TForm1.btn_delClick(Sender: TObject);
 begin
   if (length(edit1.Text)=1) or ((length(edit1.Text)=2) and (edit1.Text[1]='-')) then edit1.Text:='0'
@@ -277,37 +390,78 @@ end;
 
 procedure TForm1.btn_divisionClick(Sender: TObject);
 begin
-  firstnum:=strtonum(edit1);
-  operation:='/';
-  check:=true;
+  if numtype='DEC' then
+  begin
+    firstnum:=strtonum(edit1);
+    operation:='/';
+    check:=true;
+  end
+  else if numtype='BIN' then
+  begin
+    firstnum:=strtonumbin(edit1);
+    operation:='/';
+    check:=true;
+  end;
 end;
 
 procedure TForm1.btn_equalClick(Sender: TObject);
 begin
-  if operation<>'' then
+  if numtype='DEC' then
   begin
-    if check2 then
-    else
+    if operation<>'' then
     begin
-      num:=strtonum(edit1);
+      if check2 then
+      else
+      begin
+        num:=strtonum(edit1);
+      end;
+      case operation of
+        '+': result:=firstnum+num;
+        '-': result:=firstnum-num;
+        '*': result:=firstnum*num;
+        '/': if num<>0 then
+               result:=firstnum/num
+             else
+             begin
+                edit1.Text:='Error';
+                check:=true;
+             end;
+      end;
+      if edit1.Text<>'Error' then
+      begin
+        edit1.Text:=numtostr(result);
+        check2:=true;
+        firstnum:=result;
+      end;
     end;
-    case operation of
-      '+': result:=firstnum+num;
-      '-': result:=firstnum-num;
-      '*': result:=firstnum*num;
-      '/': if num<>0 then
-             result:=firstnum/num
-           else
-           begin
-              edit1.Text:='Error';
-              check:=true;
-           end;
-    end;
-    if edit1.Text<>'Error' then
+  end
+  else if numtype='BIN' then
+  begin
+    if operation<>'' then
     begin
-      edit1.Text:=numtostr(result);
-      check2:=true;
-      firstnum:=result;
+      if check2 then
+      else
+      begin
+        num:=strtonumbin(edit1);
+      end;
+      case operation of
+        '+': result:=firstnum+num;
+        '-': result:=firstnum-num;
+        '*': result:=firstnum*num;
+        '/': if num<>0 then
+               result:=firstnum/num
+             else
+             begin
+                edit1.Text:='Error';
+                check:=true;
+             end;
+      end;
+      if edit1.Text<>'Error' then
+      begin
+        edit1.Text:=numtostrbin(result);
+        check2:=true;
+        firstnum:=result;
+      end;
     end;
   end;
 end;
@@ -320,9 +474,18 @@ end;
 
 procedure TForm1.btn_minusClick(Sender: TObject);
 begin
-  firstnum:=strtonum(edit1);
-  operation:='-';
-  check:=true;
+  if numtype='DEC' then
+  begin
+    firstnum:=strtonum(edit1);
+    operation:='-';
+    check:=true;
+  end
+  else if numtype='BIN' then
+  begin
+    firstnum:=strtonumbin(edit1);
+    operation:='-';
+    check:=true;
+  end;
 end;
 
 procedure TForm1.btn_MminusClick(Sender: TObject);
@@ -392,16 +555,35 @@ end;
 
 procedure TForm1.btn_multiClick(Sender: TObject);
 begin
-  firstnum:=strtonum(edit1);
-  operation:='*';
-  check:=true;
+  if numtype='DEC' then
+  begin
+    firstnum:=strtonum(edit1);
+    operation:='*';
+    check:=true;
+  end
+  else if numtype='BIN' then
+  begin
+    firstnum:=strtonumbin(edit1);
+    operation:='*';
+    check:=true;
+  end;
 end;
 
 procedure TForm1.btn_plusClick(Sender: TObject);
 begin
-  firstnum:=strtonum(edit1);
-  operation:='+';
-  check:=true;
+  if numtype='DEC' then
+  begin
+    firstnum:=strtonum(edit1);
+    operation:='+';
+    check:=true;
+  end
+  else if numtype='BIN' then
+  begin
+    firstnum:=strtonumbin(edit1);
+    operation:='+';
+    check:=true;
+  end;
+
 end;
 
 procedure TForm1.btn_sinClick(Sender: TObject);
@@ -428,9 +610,18 @@ end;
 
 procedure TForm1.btn_x2Click(Sender: TObject);
 begin
-  tempnum:=strtonum(edit1);
-  tempnum:=tempnum*tempnum;
-  edit1.Text:=numtostr(tempnum);
+  if numtype='DEC' then
+  begin
+    tempnum:=strtonum(edit1);
+    tempnum:=tempnum*tempnum;
+    edit1.Text:=numtostr(tempnum);
+  end
+  else if numtype='BIN' then
+  begin
+    tempnum:=strtonumbin(edit1);
+    tempnum:=tempnum*tempnum;
+    edit1.Text:=numtostrbin(tempnum);
+  end
 end;
 
 procedure TForm1.Edit1Change(Sender: TObject);

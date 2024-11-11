@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 1738
+  Left = 1719
   Height = 569
-  Top = 449
-  Width = 410
+  Top = 415
+  Width = 535
   Caption = 'Form1'
   ClientHeight = 569
-  ClientWidth = 410
+  ClientWidth = 535
   Font.CharSet = RUSSIAN_CHARSET
   Font.Height = -21
   Font.Name = 'Segoe UI Semibold'
@@ -250,7 +250,7 @@ object Form1: TForm1
     OnClick = btn_3Click
   end
   object btn_plus: TButton
-    Left = 306
+    Left = 307
     Height = 70
     Top = 382
     Width = 102
@@ -321,10 +321,29 @@ object Form1: TForm1
     OnClick = btn_MswClick
   end
   object Label2: TLabel
-    Left = 244
+    Left = 208
     Height = 30
     Top = 528
     Width = 8
     Caption = '1'
+  end
+  object Btn_DEC: TButton
+    Left = 416
+    Height = 59
+    Top = 106
+    Width = 69
+    Caption = 'DEC'
+    Enabled = False
+    TabOrder = 32
+    OnClick = Btn_DECClick
+  end
+  object Btn_BIN: TButton
+    Left = 416
+    Height = 59
+    Top = 168
+    Width = 69
+    Caption = 'BIN'
+    TabOrder = 33
+    OnClick = Btn_BINClick
   end
 end
