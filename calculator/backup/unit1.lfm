@@ -3,7 +3,7 @@ object Form1: TForm1
   Height = 569
   Top = 415
   Width = 535
-  Caption = 'Form1'
+  Caption = 'Calculator'
   ClientHeight = 569
   ClientWidth = 535
   Font.CharSet = RUSSIAN_CHARSET
@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Pitch = fpVariable
   Font.Quality = fqDraft
   Font.Style = [fsBold]
+  OnCreate = FormCreate
   LCLVersion = '3.6.0.0'
   object Edit1: TEdit
     Left = 0

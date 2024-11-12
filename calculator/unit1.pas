@@ -81,6 +81,7 @@ type
     procedure btn_sqrClick(Sender: TObject);
     procedure btn_x2Click(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure Label1Click(Sender: TObject);
   private
 
@@ -640,6 +641,11 @@ begin
 end;
 
 procedure TForm1.Edit1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
 begin
 
 end;

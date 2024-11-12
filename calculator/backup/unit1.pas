@@ -81,6 +81,7 @@ type
     procedure btn_sqrClick(Sender: TObject);
     procedure btn_x2Click(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
     procedure Label1Click(Sender: TObject);
   private
 
@@ -308,7 +309,6 @@ begin
   btn_Mminus.enabled:=false;
   btn_Msw.enabled:=false;
   btn_1x.enabled:=false;
-  btn_sqr.enabled:=false;
   if numtype='DEC' then
   begin
      numtype:='BIN';
@@ -372,7 +372,6 @@ begin
     btn_Mminus.enabled:=true;
     btn_Msw.enabled:=true;
     btn_1x.enabled:=true;
-    btn_sqr.enabled:=true;
     if numtype='BIN' then
     begin
      numtype:='DEC';
@@ -595,16 +594,33 @@ end;
 
 procedure TForm1.btn_sqrClick(Sender: TObject);
 begin
-  tempnum:=strtonum(edit1);
-  if tempnum>=0 then
+  if numtype ='DEC' then
   begin
-    tempnum:=sqrt(tempnum);
-    edit1.Text:=numtostr(tempnum);
+    tempnum:=strtonum(edit1);
+    if tempnum>=0 then
+    begin
+      tempnum:=sqrt(tempnum);
+      edit1.Text:=numtostr(tempnum);
+    end
+    else
+    begin
+      edit1.Text:='Error';
+      check:=true;
+    end;
   end
-  else
+  else  if numtype= 'BIN' then
   begin
-    edit1.Text:='Error';
-    check:=true;
+    tempnum:=strtonumbin(edit1);
+    if tempnum>=0 then
+    begin
+      tempnum:=sqrt(tempnum);
+      edit1.Text:=numtostrbin(tempnum);
+    end
+    else
+    begin
+      edit1.Text:='Error';
+      check:=true;
+    end;
   end;
 end;
 
@@ -625,6 +641,11 @@ begin
 end;
 
 procedure TForm1.Edit1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
 begin
 
 end;
