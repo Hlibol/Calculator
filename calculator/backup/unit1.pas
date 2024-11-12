@@ -610,9 +610,18 @@ end;
 
 procedure TForm1.btn_x2Click(Sender: TObject);
 begin
-  tempnum:=strtonum(edit1);
-  tempnum:=tempnum*tempnum;
-  edit1.Text:=numtostr(tempnum);
+  if numtype='DEC' then
+  begin
+    tempnum:=strtonum(edit1);
+    tempnum:=tempnum*tempnum;
+    edit1.Text:=numtostr(tempnum);
+  end
+  else if numtype='BIN' then
+  begin
+    tempnum:=strtonumbin(edit1);
+    tempnum:=tempnum*tempnum;
+    edit1.Text:=numtostrbin(tempnum);
+  end
 end;
 
 procedure TForm1.Edit1Change(Sender: TObject);
